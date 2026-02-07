@@ -1,24 +1,31 @@
-// Cambia esto por tu URL de Apps Script (la que termina en /exec)
-const URL_SCRIPT = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSdNpcxTFyeuSqf9WEem3Vh5REae5JqHhlyNSew__J5hnVTVe1Xi8uxi_MAiN3l-YneFjgnFTOzCNB5/pub?output=csv";
+// URL de tu Apps Script de Google
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyqTZY3jKziN-ZvLP-pdFBUKKwU0fA-Mrr6oXXV0pcG9EKw67mavvIY0SyIZbHpBixV/exec';
 
-const formulario = document.getElementById('form-encuesta');
-const boton = document.getElementById('btn-enviar');
+const form = document.getElementById('form-encuesta');
+const btnEnviar = document.getElementById('btn-enviar');
 
-formulario.addEventListener('submit', e => {
-    e.preventDefault();
-    boton.disabled = true;
-    boton.innerText = "Enviando...";
+form.addEventListener('submit', e => {
+    e.preventDefault(); // Evita que la página se recargue
+    
+    // Desactivamos el botón para evitar múltiples envíos
+    btnEnviar.disabled = true;
+    btnEnviar.innerText = "Enviando encuesta...";
 
-    fetch(URL_SCRIPT, { method: 'POST', body: new FormData(formulario)})
-    .then(res => {
-        alert("¡Gracias! Tu encuesta ha sido enviada correctamente.");
-        formulario.reset();
-        boton.disabled = false;
-        boton.innerText = "Enviar Encuesta";
+    // Enviamos los datos a tu Google Sheet
+    fetch(scriptURL, { 
+        method: 'POST', 
+        body: new FormData(form)
     })
-    .catch(err => {
-        console.error(err);
-        alert("Hubo un error. Intenta de nuevo.");
-        boton.disabled = false;
+    .then(response => {
+        alert("¡Muchas gracias! Tu opinión ha sido registrada en la base de datos de CLEANPISIMO.");
+        form.reset(); // Limpia los campos
+        btnEnviar.disabled = false;
+        btnEnviar.innerText = "Enviar Encuesta";
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+        alert("Hubo un problema al enviar la encuesta. Por favor, intenta de nuevo.");
+        btnEnviar.disabled = false;
+        btnEnviar.innerText = "Reintentar";
     });
 });
