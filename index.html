@@ -3,48 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encuesta CLEANPISIMO</title>
+    <title>Encuesta de Satisfacción | CLEANPISIMO</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <div class="contenedor">
-        <img src="imagenes/logo.png" alt="CLEANPISIMO" class="logo">
-        <h1>Tu opinión es importante</h1>
-        
+
+    <div class="contenedor-encuesta">
+        <div class="header">
+            <img src="imagenes/logo.png" alt="CLEANPISIMO" class="logo">
+            <h1>Encuesta de Servicio</h1>
+            <p>Ayúdanos a mejorar tu experiencia</p>
+        </div>
+
         <form id="form-encuesta">
-            <label>ID del Servicio (proporcionado por el equipo):</label>
-            <input type="text" name="id_servicio" placeholder="Ej: CP-123" required>
+            <div class="campo">
+                <label>ID del Servicio:</label>
+                <input type="text" name="id_servicio" placeholder="Ej: CP-100" required>
+            </div>
 
-            <label>Nombre del Cliente:</label>
-            <input type="text" name="cliente" required>
+            <div class="campo">
+                <label>Nombre del Cliente:</label>
+                <input type="text" name="cliente" placeholder="Tu nombre" required>
+            </div>
 
-            <label>Servicio realizado:</label>
-            <select name="servicio">
-                <option value="Salas">Lavado de Salas</option>
-                <option value="Colchones">Lavado de Colchones</option>
-                <option value="Vestiduras">Vestiduras de Auto</option>
-            </select>
+            <div class="campo">
+                <label>Servicio Realizado:</label>
+                <select name="servicio" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Salas">Lavado de Salas</option>
+                    <option value="Colchones">Lavado de Colchones</option>
+                    <option value="Vestiduras">Vestiduras de Auto</option>
+                    <option value="Tapetes">Tapetes y Alfombras</option>
+                </select>
+            </div>
 
-            <label>1. ¿Cómo calificarías la limpieza?</label>
-            <select name="calificacion">
-                <option value="5">Excelente ⭐⭐⭐⭐⭐</option>
-                <option value="4">Muy Bueno ⭐⭐⭐⭐</option>
-                <option value="3">Bueno ⭐⭐⭐</option>
-            </select>
+            <div class="campo">
+                <label>¿Qué tan satisfecho estás con la limpieza?</label>
+                <select name="calificacion" required>
+                    <option value="5">⭐⭐⭐⭐⭐ Excelente</option>
+                    <option value="4">⭐⭐⭐⭐ Muy Bueno</option>
+                    <option value="3">⭐⭐⭐ Bueno</option>
+                    <option value="2">⭐⭐ Regular</option>
+                    <option value="1">⭐ Malo</option>
+                </select>
+            </div>
 
-            <label>2. ¿El personal fue amable y puntual?</label>
-            <select name="amabilidad">
-                <option value="Si">Sí, totalmente</option>
-                <option value="Regular">Regular</option>
-                <option value="No">No</option>
-            </select>
-
-            <label>Comentarios:</label>
-            <textarea name="comentarios" rows="3"></textarea>
+            <div class="campo">
+                <label>Comentarios adicionales:</label>
+                <textarea name="comentarios" rows="4" placeholder="¿Algo que quieras decirnos?"></textarea>
+            </div>
 
             <button type="submit" id="btn-enviar">Enviar Encuesta</button>
         </form>
+
+        <div class="footer">
+            <p>© 2026 CLEANPISIMO | Cuernavaca, Morelos</p>
+        </div>
     </div>
+
     <script src="index.js"></script>
 </body>
 </html>
