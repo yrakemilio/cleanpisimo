@@ -9,19 +9,21 @@
 <body>
     <div class="contenedor-encuesta">
         <div class="header">
-            <img src="cleanpisimo/CLEANPISIMO.png" alt="CLEANPISIMO" class="logo">
-            <h1>Tu opinión cuenta</h1>
+            <img src="cleanpisimo/logo.png" alt="CLEANPISIMO" class="logo">
+            <h1>Evaluación de Servicio</h1>
         </div>
 
         <form id="form-encuesta">
             <div class="grupo">
-                <label>ID del Servicio:</label>
-                <input type="text" name="id_servicio" required placeholder="Ej: CP-100">
+                <label>ID de Servicio:</label>
+                <input type="text" name="id_servicio" placeholder="Ej: CP-100" required>
             </div>
+
             <div class="grupo">
                 <label>Nombre del Cliente:</label>
                 <input type="text" name="cliente" required>
             </div>
+
             <div class="grupo">
                 <label>Servicio Realizado:</label>
                 <select name="servicio">
@@ -30,19 +32,24 @@
                     <option value="Vestiduras">Vestiduras de Auto</option>
                 </select>
             </div>
+
             <div class="grupo">
-                <label>Calificación:</label>
+                <label>¿Cómo calificarías el servicio?</label>
                 <select name="calificacion">
-                    <option value="5">Excelente ⭐⭐⭐⭐⭐</option>
-                    <option value="4">Muy Bueno ⭐⭐⭐⭐</option>
-                    <option value="3">Bueno ⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐ Excelente</option>
+                    <option value="4">⭐⭐⭐⭐ Muy Bueno</option>
+                    <option value="3">⭐⭐⭐ Bueno</option>
+                    <option value="2">⭐⭐ Regular</option>
+                    <option value="1">⭐ Malo</option>
                 </select>
             </div>
+
             <div class="grupo">
                 <label>Comentarios:</label>
                 <textarea name="comentarios" rows="3"></textarea>
             </div>
-            <button type="submit" id="btn-enviar">Enviar mi opinión</button>
+
+            <button type="submit" id="btn-enviar">Enviar Encuesta</button>
         </form>
     </div>
     <script src="index.js"></script>
