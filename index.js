@@ -1,5 +1,5 @@
 // Cambia esto por tu URL de Apps Script (la que termina en /exec)
-const URL_SCRIPT = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSdNpcxTFyeuSqf9WEem3Vh5REae5JqHhlyNSew__J5hnVTVe1Xi8uxi_MAiN3l-YneFjgnFTOzCNB5/pubhtml";
+const URL_SCRIPT = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSdNpcxTFyeuSqf9WEem3Vh5REae5JqHhlyNSew__J5hnVTVe1Xi8uxi_MAiN3l-YneFjgnFTOzCNB5/pub?output=csv";
 
 const formulario = document.getElementById('form-encuesta');
 const boton = document.getElementById('btn-enviar');
